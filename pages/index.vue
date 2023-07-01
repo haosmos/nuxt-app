@@ -1,11 +1,12 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
-<h1>hello from nuxt!</h1>
+  <NuxtLink
+    :href="firstLesson.path"
+    class="underline font-medium"
+  >
+    Go to first lesson
+  </NuxtLink>
 </template>
 
-<style scoped>
-
-</style>
+<script lang="ts" setup>
+const firstLesson = useFirstLesson();
+</script>
