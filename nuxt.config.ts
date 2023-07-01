@@ -3,5 +3,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/devtools',
     '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
   ],
 })
