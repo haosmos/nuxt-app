@@ -4,8 +4,8 @@
     class="rounded p-3 flex items-center space-x-3 bg-white"
   >
     <img
-      class="rounded-full w-12 h-12 border-2 border-blue-400"
       :src="profile"
+      class="rounded-full w-12 h-12 border-2 border-blue-400"
     />
     <div class="text-right">
       <div class="font-medium">{{ name }}</div>
@@ -16,13 +16,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 const user = useSupabaseUser();
 
 const name = computed(
-  () => user?.value.user_metadata.full_name
+  () => user?.value?.user_metadata.full_name
 );
 const profile = computed(
-  () => user?.value.user_metadata.avatar_url
+  () => user?.value?.user_metadata.avatar_url
 );
 </script>
