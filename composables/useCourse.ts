@@ -15,6 +15,7 @@ export const useCourse = (): Course => {
           path: `/course/chapter/${chapter.slug}/lesson/${lesson.slug}`,
         })
       );
+      
       return {
         ...chapter,
         lessons,

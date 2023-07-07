@@ -37,6 +37,7 @@ export default defineEventHandler((event): CourseMeta => {
       const chapter: OutlineChapter = {
         title: next.title,
         slug: next.slug,
+        
         number: next.number,
         lessons,
       };
