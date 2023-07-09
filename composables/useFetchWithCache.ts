@@ -7,25 +7,28 @@ export default async <T>(url: string) => {
     // determine which serializer to use
     serializer: StorageSerializers.object,
   });
-
+  
   if (!cached.value) {
+    
     const {
       data,
       error
-    } = await useFetch<T>(url);
-
+    } = await useFetch<T>(url, {
+      headers: useRequestHeaders(['cookie']),
+    });
+    
     if (error.value) {
       throw createError({
         ...error.value,
         statusMessage: `Could not fetch data from ${url}`,
       });
     }
-
+    
     cached.value = data.value as T;
   } else {
     console.log(`Getting value from cache for ${url}`);
-    console.log("cached is: ", cached);
+    console.log('cached is: ', cached);
   }
-
+  
   return cached;
 };
