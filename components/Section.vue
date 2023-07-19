@@ -16,10 +16,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-defineProps<{
-  title?: string;
-}>();
+<script lang="ts" setup>
+defineProps<{ title?: string; }>();
 </script>
 
 <script lang="ts">

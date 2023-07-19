@@ -53,7 +53,7 @@
           {{ index + 1 }}
         </Badge>
         {{ chapter.title }}
-
+        
         <ul class="mt-4 space-y-2">
           <li
             v-for="lesson in chapter.lessons"
@@ -64,20 +64,26 @@
               {{ lesson.number }}
             </Badge>
             <span class="text-xl opacity-80">{{
-              lesson.title
-            }}</span>
+                lesson.title
+                                             }}</span>
           </li>
         </ul>
       </li>
     </ul>
   </Section>
-  <Payment
+  <LazyPayment
     v-if="showPayment"
     @close="showPayment = false"
   />
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
+import screen1 from '~/assets/images/screen1.png';
+import screen2 from '~/assets/images/screen2.png';
+import screen3 from '~/assets/images/screen3.png';
+import screen4 from '~/assets/images/screen4.png';
+import screen5 from '~/assets/images/screen5.png';
+
 const course = await useCourse();
 const learningOutcomes = [
   'Hands-On Experience with the Benefits of TypeScript',
@@ -87,11 +93,11 @@ const learningOutcomes = [
   'How to type reactive data, refs, props, custom events, event handlers, DOM elements, template refs, data from provide/inject, and more',
 ];
 const screenshots = [
-  '/images/screen1.png',
-  '/images/screen2.png',
-  '/images/screen3.png',
-  '/images/screen4.png',
-  '/images/screen5.png',
+  screen1,
+  screen2,
+  screen3,
+  screen4,
+  screen5,
 ];
 
 definePageMeta({
